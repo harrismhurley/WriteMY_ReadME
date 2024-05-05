@@ -38,6 +38,11 @@ const questions = [
     },
     {
         type: 'input',
+        name: 'require',
+        message: "What are your project's dependencies?",
+    },
+    {
+        type: 'input',
         name: 'features',
         message: 'What sort of features are included in your project?',
     },
@@ -56,10 +61,20 @@ const questions = [
         name: 'username',
         message: 'What is your GitHub username?',
     },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What email would you like users to send their questions to?',
+    },
+    {
+        type: 'input',
+        name: 'link',
+        message: 'Copy and paste the link to your deployed project',
+    },
 ];
 
 // TODO: Create a function to write README file
-function writeFile(fileName, data) { 
+function writeToFile(fileName, data) { 
         fs.writeFile(fileName, generateMarkdown(data) , err =>
     err ? console.log(err) : console.log('READMEFILE has be successfully generated'))
 };
