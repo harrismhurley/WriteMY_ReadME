@@ -48,7 +48,7 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== 'None') {
-    return `## License ${renderLicenseBadge(license)}
+    return `
   
 This project is licensed under the [${license}](${renderLicenseLink(license)}) license.`;
   } else {
@@ -59,8 +59,9 @@ This project is licensed under the [${license}](${renderLicenseLink(license)}) l
 }
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-
+    return `# ${data.title}
+    
+${renderLicenseBadge(data.license)}
 ## Description
 ${data.description}
 
@@ -72,10 +73,10 @@ ${data.link}
 * [Usage](#usage)
 * [Credits](#credits)
 * [Features](#features)
-* [Dependencies](#require)
-* [How to Contribute](#HowtoContribute)
-* [Tests](#testing)
-* [License](#License)
+* [Dependencies](#dependencies)
+* [How to Contribute](#howtocontribute)
+* [Tests](#tests)
+* [License](#license)
 * [Questions](#questions)
 
 ## Installation
@@ -99,10 +100,11 @@ ${data.contribution}
 ## Tests
 ${data.tests}
 
+## License 
 ${renderLicenseSection(data.license)}
 
 ## Questions
-Please send your questions [here](mailto:${data.email}?subject=[GitHub]%20Dev%20Connect) or visit [github/${data.username}](https://github.com/${data.username}).
+Please send your questions [Via Email](mailto:${data.email}?subject=[GitHub]%20Dev%20Connect) or visit [github](https://github.com/${data.username}).
 `;
 }
 
