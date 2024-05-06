@@ -74,7 +74,7 @@ ${data.link}
 * [Credits](#credits)
 * [Features](#features)
 * [Dependencies](#dependencies)
-* [How to Contribute](#howtocontribute)
+* [How to Contribute](#how-to-contribute)
 * [Tests](#tests)
 * [License](#license)
 * [Questions](#questions)
