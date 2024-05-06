@@ -31,9 +31,10 @@ const questions = [
         message: 'Were there any other collaborators for your project?',
     },
     {
-        type: 'checkbox',
+        type: 'list',
         name: 'license',
-        choices: ['NONE', 'Apache 2.0', 'Boost Software License 1.0', 'GNU AGPLv3', 'MIT', 'Mozilla Public License 2.0',],
+        choices: ['Apache 2.0', 'Boost Software License 1.0', 'GNU AGPLv3', 'MIT', 'Mozilla Public License 2.0', 'None'],
+        message: 'Please choose your license',
     },
     {
         type: 'input',
@@ -91,6 +92,5 @@ function init() {
         writeToFile(`${responses.title}_README.md`, generateMarkdown({ ...responses }));
     });
 }
-
 // Function call to initialize app
 init();
