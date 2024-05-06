@@ -56,7 +56,7 @@ To use this application, follow these steps:
 ![Comparison of ReadMe.md and Preview with User CLI input](./Images/ReadMe_Compare.png)
 
 ## Walkthrough
-
+[Walkthrough Video](Images/Walkthrough.webm)
 
 ## How to Contribute
 If you would like to contribute you can contact me [Via Email](mailto:harrismhurley@icloud.com?subject=[GitHub]%20Dev%20Connect) or visit [github](https://github.com/harrismhurley).
