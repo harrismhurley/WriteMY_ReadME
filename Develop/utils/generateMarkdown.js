@@ -10,16 +10,16 @@ function renderLicenseBadge(license) {
       return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
       break;
     case 'Boost Software License 1.0':
-      return  `[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)]`;
+      return `[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)]`;
       break;
     case 'GNU AGPLv3':
-      return  `[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)]`;
+      return `[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)]`;
       break;
     case 'Mozilla Public License 2.0':
-      return  `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]`;
+      return `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)]`;
       break;
-    default:
-      return  '';
+    case 'None':
+      return '';
       break;
   }
 }
@@ -39,7 +39,7 @@ function renderLicenseLink(license) {
       return 'https://www.gnu.org/licenses/agpl-3.0.html';
     case 'Mozilla Public License 2.0':
       return 'https://opensource.org/licenses/MPL-2.0';
-    default:
+    case 'None':
       return '';
   }
 }
@@ -52,14 +52,13 @@ function renderLicenseSection(license) {
   
 This project is licensed under the [${license}](${renderLicenseLink(license)}) license.`;
   } else {
-    return '';
+    return `## License
+    
+  N/A`;
   }
 }
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  const licenseBadge = renderLicenseBadge(data.license);
-  const licenseSection = renderLicenseSection(data.license);
-      
   return `# ${data.title}
 
 ## Description
