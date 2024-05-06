@@ -33,8 +33,7 @@ const questions = [
     {
         type: 'checkbox',
         name: 'license',
-        choices: ['NONE','GNU AGPLv3', 'Mozilla Public License 2.0', 
-        'Apache License 2.0', 'MIT', 'Boost Software License 1.0', 'Unilicensed'],
+        choices: ['NONE', 'Apache 2.0', 'Boost Software License 1.0', 'GNU AGPLv3', 'MIT', 'Mozilla Public License 2.0',],
     },
     {
         type: 'input',
@@ -71,16 +70,21 @@ const questions = [
         name: 'link',
         message: 'Copy and paste the link to your deployed project',
     },
-];
+]
+
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { 
-        fs.writeFile(fileName, generateMarkdown(data) , err =>
-    err ? console.log(err) : console.log('READMEFILE has be successfully generated'))
-};
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then((responses) => {
+        console.log("Generating your ReadMe");
+        writeToFile(`./Rendered/${data.title}_README.md`, generateMarkdown({ ...responses }));
+    });
+}
 
 // Function call to initialize app
 init();
